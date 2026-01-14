@@ -24,7 +24,7 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="RVWidget" name="widgetRV">
+       <widget class="VRWidget" name="widgetVR">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>0</horstretch>
@@ -569,7 +569,7 @@ border-radius: 5px;</string>
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="RVResources.qrc">:/textures/wood.png</pixmap>
+               <pixmap resource="VRResources.qrc">:/textures/wood.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>true</bool>
@@ -614,9 +614,9 @@ border-radius: 5px;</string>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>RVWidget</class>
+   <class>VRWidget</class>
    <extends>QOpenGLWidget</extends>
-   <header>rvwidget.h</header>
+   <header>vrwidget.h</header>
    <slots>
     <slot>startAnimation()</slot>
     <slot>changeFov(int)</slot>
@@ -639,13 +639,13 @@ border-radius: 5px;</string>
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="RVResources.qrc"/>
+  <include location="VRResources.qrc"/>
  </resources>
  <connections>
   <connection>
    <sender>animationButton</sender>
    <signal>clicked()</signal>
-   <receiver>widgetRV</receiver>
+   <receiver>widgetVR</receiver>
    <slot>startAnimation()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -661,7 +661,7 @@ border-radius: 5px;</string>
   <connection>
    <sender>fov</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>widgetRV</receiver>
+   <receiver>widgetVR</receiver>
    <slot>changeFov(int)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -773,7 +773,7 @@ border-radius: 5px;</string>
   <connection>
    <sender>xLight</sender>
    <signal>valueChanged(double)</signal>
-   <receiver>widgetRV</receiver>
+   <receiver>widgetVR</receiver>
    <slot>changeXLight(double)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -789,7 +789,7 @@ border-radius: 5px;</string>
   <connection>
    <sender>yLight</sender>
    <signal>valueChanged(double)</signal>
-   <receiver>widgetRV</receiver>
+   <receiver>widgetVR</receiver>
    <slot>changeYLight(double)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -805,7 +805,7 @@ border-radius: 5px;</string>
   <connection>
    <sender>zLight</sender>
    <signal>valueChanged(double)</signal>
-   <receiver>widgetRV</receiver>
+   <receiver>widgetVR</receiver>
    <slot>changeZLight(double)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -821,7 +821,7 @@ border-radius: 5px;</string>
   <connection>
    <sender>specCoeff</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>widgetRV</receiver>
+   <receiver>widgetVR</receiver>
    <slot>changeSpecCoeff(int)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -869,7 +869,7 @@ border-radius: 5px;</string>
   <connection>
    <sender>checkBox_3</sender>
    <signal>clicked()</signal>
-   <receiver>widgetRV</receiver>
+   <receiver>widgetVR</receiver>
    <slot>changeBounce()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -885,7 +885,7 @@ border-radius: 5px;</string>
   <connection>
    <sender>checkBox_4</sender>
    <signal>clicked()</signal>
-   <receiver>widgetRV</receiver>
+   <receiver>widgetVR</receiver>
    <slot>startAnimationLight()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -901,7 +901,7 @@ border-radius: 5px;</string>
   <connection>
    <sender>checkBox_5</sender>
    <signal>clicked()</signal>
-   <receiver>widgetRV</receiver>
+   <receiver>widgetVR</receiver>
    <slot>targetOnPlanet()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -917,7 +917,7 @@ border-radius: 5px;</string>
   <connection>
    <sender>checkBox_6</sender>
    <signal>clicked()</signal>
-   <receiver>widgetRV</receiver>
+   <receiver>widgetVR</receiver>
    <slot>startAnimationCamera()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -933,7 +933,7 @@ border-radius: 5px;</string>
   <connection>
    <sender>checkBox_7</sender>
    <signal>clicked()</signal>
-   <receiver>widgetRV</receiver>
+   <receiver>widgetVR</receiver>
    <slot>changeStereo()</slot>
    <hints>
     <hint type="sourcelabel">
