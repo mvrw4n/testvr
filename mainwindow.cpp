@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "rvlight.h"
+#include "vrlight.h"
 #include <random>
 #include <QColorDialog>
 #include <QPixmap>
@@ -43,7 +43,7 @@ void MainWindow::createBody()
     QQuaternion orientation = QQuaternion::fromEulerAngles(tangage, lacet, roulis);
 
     QString newBody = ui->comboCorps->currentText();
-    ui->widgetRV->addBody(position, orientation, newBody);
+    ui->widgetVR->addBody(position, orientation, newBody);
 }
 
 void MainWindow::setAleatoire()
@@ -59,13 +59,13 @@ void MainWindow::setSaving()
 void MainWindow::changeSkyboxImage(QString img)
 {
     //QString img = ui->comboSkybox->currentText();
-    ui->widgetRV->setSkyboxImage(img);
+    ui->widgetVR->setSkyboxImage(img);
 }
 
 
 void MainWindow::changeAmbientLight()
 {
-    RVLight* lumiere = ui->widgetRV->getLight();
+    VRLight* lumiere = ui->widgetVR->getLight();
     QColor col = QColorDialog::getColor(lumiere->getAmbient(), this);
     if (col.isValid()) {
         QString qss = QString("background-color: %1;\n border: 1px solid black;\n border-radius: 5px;").arg(col.name());
@@ -76,7 +76,7 @@ void MainWindow::changeAmbientLight()
 
 void MainWindow::changeDiffuseLight()
 {
-    RVLight* lumiere = ui->widgetRV->getLight();
+    VRLight* lumiere = ui->widgetVR->getLight();
     QColor col = QColorDialog::getColor(lumiere->getDiffuse(), this);
     if (col.isValid()) {
         QString qss = QString("background-color: %1;\n border: 1px solid black;\n border-radius: 5px;").arg(col.name());
@@ -87,7 +87,7 @@ void MainWindow::changeDiffuseLight()
 
 void MainWindow::changeSpecularLight()
 {
-    RVLight* lumiere = ui->widgetRV->getLight();
+    VRLight* lumiere = ui->widgetVR->getLight();
     QColor col = QColorDialog::getColor(lumiere->getSpecular(), this);
     if (col.isValid()) {
         QString qss = QString("background-color: %1;\n border: 1px solid black;\n border-radius: 5px;").arg(col.name());
@@ -98,7 +98,7 @@ void MainWindow::changeSpecularLight()
 
 void MainWindow::takePicture()
 {
-    QPixmap img = ui->widgetRV->getImage();
+    QPixmap img = ui->widgetVR->getImage();
     ui->image->clear();
     ui->image->setPixmap(img);
     if (saving){
